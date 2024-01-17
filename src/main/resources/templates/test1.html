@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+글쓰는 페이지입니다.<br>
+<input type="text"></input>
+
+<button onclick="aaa();">작성하기</button>
+
+<script>
+    function aaa(){
+        $.ajax({
+            url: "/api/itest" ,
+            data: _data ,
+            type: "GET" ,
+            cache : false,
+            contentType : false,
+            processData : false,
+            success: function(data) {
+                alert("success : " + JSON.stringify(data));
+            },
+            error: function(data) {
+                alert("error : " + JSON.stringify(data));
+            },
+            always: function(data) {
+                alert("always : " + JSON.stringify(data));
+            }
+        });
+    }
+</script>
+</body>
+</html>
